@@ -21,7 +21,7 @@
                 /* you can delete the line below if you'd prefer to not use an image */
                 background-size: 260px;
                 color: #000507;
-                background-image: url("assets/background.gif");
+                background-image: url('assets/background.gif');
             }
 
             * {
@@ -70,7 +70,7 @@
                 /* this is only for a background image! */
                 /* if you want to put images IN the header, 
       you can add them directly to the <div id="header"></div> element! */
-                background-image: url('/assets/Header.png');
+                background-image: url('assets/Header.png');
                 background-size: 100%;
             }
 
