@@ -1,1086 +1,138 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <!-- =====================================================
-         BASIC PAGE INFORMATION
-         ===================================================== -->
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="syahsellingstuff's product catalogue and archive"
+        content="Syahsellingstuff — objects, collections, experiments, and archive."
     >
 
-    <meta
-        name="author"
-        content="Sya"
-    >
-
-    <title>syahsellingstuff</title>
-
-
-    <!-- =====================================================
-         STYLESHEET
-         ===================================================== -->
+    <title>Syahsellingstuff</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
+<body class="landing-page">
 
-<body>
-
-
-    <!-- =====================================================
-         HEADER / NAVIGATION
-         ===================================================== -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
     <header class="site-header">
-
         <div class="container">
-
             <nav class="nav">
 
-                <!-- Website / Brand Name -->
-
                 <a href="index.html" class="logo">
-                    YOUR NAME
+                    SYAHSELLINGSTUFF
                 </a>
 
-
-                <!-- Navigation -->
-
                 <ul class="nav-links">
-
                     <li>
-                        <a href="#collection" class="active">
-                            Collection
-                        </a>
+                        <a href="catalogue.html">Catalogue</a>
                     </li>
 
                     <li>
-                        <a href="#archive">
-                            Archive
-                        </a>
+                        <a href="archive.html">Archive</a>
                     </li>
 
                     <li>
-                        <a href="#about">
-                            About
-                        </a>
+                        <a href="about.html">About</a>
                     </li>
-
-                    <li>
-                        <a href="#contact">
-                            Contact
-                        </a>
-                    </li>
-
                 </ul>
 
             </nav>
-
         </div>
-
     </header>
 
 
+    <!-- =========================
+         LANDING
+    ========================== -->
 
     <main>
 
+        <section class="landing">
 
-        <!-- =================================================
-             HERO
-             ================================================= -->
+            <div class="landing-content">
 
-        <section class="hero">
+                <p class="hero-label">
+                    SYAHSELLINGSTUFF
+                </p>
 
-            <div class="container">
+                <h1>
+                    Objects,<br>
+                    things &amp;<br>
+                    other stuff.
+                </h1>
 
-                <div class="hero-content">
+                <p class="landing-description">
+                    A collection of things made, found, collected,
+                    experimented with, and occasionally sold.
+                </p>
 
-                    <div class="hero-label">
-                        Independent Catalogue / 2026
-                    </div>
+                <div class="landing-actions">
 
-
-                    <h1>
-                        Objects, ideas<br>
-                        &amp; things I've made.
-                    </h1>
-
-
-                    <p>
-                        A collection of products, experiments,
-                        projects and other things created over time.
-                    </p>
-
-
-                    <div class="flex gap-3 mt-5">
-
-                        <a
-                            href="#collection"
-                            class="btn btn-primary"
-                        >
-                            Explore Collection
-                        </a>
-
-                        <a
-                            href="#archive"
-                            class="btn btn-secondary"
-                        >
-                            View Archive
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             COLLECTION INTRO
-             ================================================= -->
-
-        <section id="collection" class="section-small">
-
-            <div class="container">
-
-                <div class="flex-between flex-wrap gap-4">
-
-                    <div>
-
-                        <div class="hero-label">
-                            01 / Current Collection
-                        </div>
-
-                        <h2>
-                            Latest work
-                        </h2>
-
-                    </div>
-
-
-                    <!-- Categories -->
-
-                    <div class="category-list">
-
-                        <a
-                            href="#"
-                            class="category active"
-                        >
-                            All
-                        </a>
-
-                        <a
-                            href="#"
-                            class="category"
-                        >
-                            Objects
-                        </a>
-
-                        <a
-                            href="#"
-                            class="category"
-                        >
-                            Clothing
-                        </a>
-
-                        <a
-                            href="#"
-                            class="category"
-                        >
-                            Prints
-                        </a>
-
-                        <a
-                            href="#"
-                            class="category"
-                        >
-                            Experiments
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             PRODUCT GRID
-             ================================================= -->
-
-        <section class="section-small">
-
-            <div class="container">
-
-                <div class="product-grid">
-
-
-                    <!-- =====================================
-                         PRODUCT 01
-                         ===================================== -->
-
-                    <article class="product-card">
-
-                        <a
-                            href="products/product-01.html"
-                            class="product-image"
-                        >
-
-                            <span class="product-badge">
-                                New
-                            </span>
-
-                            <img
-                                src="images/product-01.jpg"
-                                alt="Product One"
-                            >
-
-                        </a>
-
-
-                        <div class="product-info">
-
-                            <span class="product-category">
-                                Object / 001
-                            </span>
-
-                            <h3 class="product-name">
-                                Product One
-                            </h3>
-
-                            <p class="product-description">
-                                A short description of the first
-                                object or product.
-                            </p>
-
-
-                            <div class="product-footer">
-
-                                <span class="product-price">
-                                    $45.00
-                                </span>
-
-                                <a
-                                    href="products/product-01.html"
-                                    class="btn btn-secondary btn-small"
-                                >
-                                    View
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =====================================
-                         PRODUCT 02
-                         ===================================== -->
-
-                    <article class="product-card">
-
-                        <a
-                            href="products/product-02.html"
-                            class="product-image"
-                        >
-
-                            <img
-                                src="images/product-02.jpg"
-                                alt="Product Two"
-                            >
-
-                        </a>
-
-
-                        <div class="product-info">
-
-                            <span class="product-category">
-                                Print / 002
-                            </span>
-
-                            <h3 class="product-name">
-                                Product Two
-                            </h3>
-
-                            <p class="product-description">
-                                A short description of the second
-                                object or product.
-                            </p>
-
-
-                            <div class="product-footer">
-
-                                <span class="product-price">
-                                    $30.00
-                                </span>
-
-                                <a
-                                    href="products/product-02.html"
-                                    class="btn btn-secondary btn-small"
-                                >
-                                    View
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =====================================
-                         PRODUCT 03
-                         ===================================== -->
-
-                    <article class="product-card">
-
-                        <a
-                            href="products/product-03.html"
-                            class="product-image"
-                        >
-
-                            <img
-                                src="images/product-03.jpg"
-                                alt="Product Three"
-                            >
-
-                        </a>
-
-
-                        <div class="product-info">
-
-                            <span class="product-category">
-                                Clothing / 003
-                            </span>
-
-                            <h3 class="product-name">
-                                Product Three
-                            </h3>
-
-                            <p class="product-description">
-                                A short description of the third
-                                object or product.
-                            </p>
-
-
-                            <div class="product-footer">
-
-                                <span class="product-price">
-                                    $60.00
-                                </span>
-
-                                <a
-                                    href="products/product-03.html"
-                                    class="btn btn-secondary btn-small"
-                                >
-                                    View
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =====================================
-                         PRODUCT 04
-                         ===================================== -->
-
-                    <article class="product-card">
-
-                        <a
-                            href="products/product-04.html"
-                            class="product-image"
-                        >
-
-                            <span class="product-badge">
-                                Limited
-                            </span>
-
-                            <img
-                                src="images/product-04.jpg"
-                                alt="Product Four"
-                            >
-
-                        </a>
-
-
-                        <div class="product-info">
-
-                            <span class="product-category">
-                                Object / 004
-                            </span>
-
-                            <h3 class="product-name">
-                                Product Four
-                            </h3>
-
-                            <p class="product-description">
-                                A short description of the fourth
-                                object or product.
-                            </p>
-
-
-                            <div class="product-footer">
-
-                                <span class="product-price">
-                                    $75.00
-                                </span>
-
-                                <a
-                                    href="products/product-04.html"
-                                    class="btn btn-secondary btn-small"
-                                >
-                                    View
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =====================================
-                         PRODUCT 05
-                         ===================================== -->
-
-                    <article class="product-card">
-
-                        <a
-                            href="products/product-05.html"
-                            class="product-image"
-                        >
-
-                            <img
-                                src="images/product-05.jpg"
-                                alt="Product Five"
-                            >
-
-                        </a>
-
-
-                        <div class="product-info">
-
-                            <span class="product-category">
-                                Experiment / 005
-                            </span>
-
-                            <h3 class="product-name">
-                                Product Five
-                            </h3>
-
-                            <p class="product-description">
-                                An experimental piece from
-                                an earlier project.
-                            </p>
-
-
-                            <div class="product-footer">
-
-                                <span class="product-price">
-                                    $25.00
-                                </span>
-
-                                <a
-                                    href="products/product-05.html"
-                                    class="btn btn-secondary btn-small"
-                                >
-                                    View
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =====================================
-                         PRODUCT 06
-                         ===================================== -->
-
-                    <article class="product-card">
-
-                        <a
-                            href="products/product-06.html"
-                            class="product-image"
-                        >
-
-                            <img
-                                src="images/product-06.jpg"
-                                alt="Product Six"
-                            >
-
-                        </a>
-
-
-                        <div class="product-info">
-
-                            <span class="product-category">
-                                Print / 006
-                            </span>
-
-                            <h3 class="product-name">
-                                Product Six
-                            </h3>
-
-                            <p class="product-description">
-                                A limited print from the
-                                current collection.
-                            </p>
-
-
-                            <div class="product-footer">
-
-                                <span class="product-price">
-                                    $35.00
-                                </span>
-
-                                <a
-                                    href="products/product-06.html"
-                                    class="btn btn-secondary btn-small"
-                                >
-                                    View
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =====================================
-                         PRODUCT 07
-                         ===================================== -->
-
-                    <article class="product-card">
-
-                        <a
-                            href="products/product-07.html"
-                            class="product-image"
-                        >
-
-                            <img
-                                src="images/product-07.jpg"
-                                alt="Product Seven"
-                            >
-
-                        </a>
-
-
-                        <div class="product-info">
-
-                            <span class="product-category">
-                                Clothing / 007
-                            </span>
-
-                            <h3 class="product-name">
-                                Product Seven
-                            </h3>
-
-                            <p class="product-description">
-                                Another piece from the clothing
-                                collection.
-                            </p>
-
-
-                            <div class="product-footer">
-
-                                <span class="product-price">
-                                    $80.00
-                                </span>
-
-                                <a
-                                    href="products/product-07.html"
-                                    class="btn btn-secondary btn-small"
-                                >
-                                    View
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =====================================
-                         PRODUCT 08
-                         ===================================== -->
-
-                    <article class="product-card">
-
-                        <a
-                            href="products/product-08.html"
-                            class="product-image"
-                        >
-
-                            <img
-                                src="images/product-08.jpg"
-                                alt="Product Eight"
-                            >
-
-                        </a>
-
-
-                        <div class="product-info">
-
-                            <span class="product-category">
-                                Object / 008
-                            </span>
-
-                            <h3 class="product-name">
-                                Product Eight
-                            </h3>
-
-                            <p class="product-description">
-                                A small object developed as
-                                part of an ongoing series.
-                            </p>
-
-
-                            <div class="product-footer">
-
-                                <span class="product-price">
-                                    $50.00
-                                </span>
-
-                                <a
-                                    href="products/product-08.html"
-                                    class="btn btn-secondary btn-small"
-                                >
-                                    View
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             ARCHIVE
-             ================================================= -->
-
-        <section id="archive" class="section">
-
-            <div class="container">
-
-                <div class="mb-5">
-
-                    <div class="hero-label">
-                        02 / Archive
-                    </div>
-
-                    <h2>
-                        Previous work
-                    </h2>
-
-                    <p class="text-muted mt-3">
-                        Older products, discontinued pieces,
-                        experiments and previous collections.
-                    </p>
-
-                </div>
-
-
-                <div class="archive-list">
-
-
-                    <!-- Archive item -->
-
-                    <a
-                        href="archive/collection-2026.html"
-                        class="archive-item"
-                    >
-
-                        <span class="archive-number">
-                            001
-                        </span>
-
-                        <span class="archive-title">
-                            Collection 2026
-                        </span>
-
-                        <span class="archive-date">
-                            2026
-                        </span>
-
+                    <a href="catalogue.html" class="btn btn-primary">
+                        Enter Catalogue
                     </a>
 
-
-                    <a
-                        href="archive/collection-2025.html"
-                        class="archive-item"
-                    >
-
-                        <span class="archive-number">
-                            002
-                        </span>
-
-                        <span class="archive-title">
-                            Collection 2025
-                        </span>
-
-                        <span class="archive-date">
-                            2025
-                        </span>
-
+                    <a href="archive.html" class="btn btn-secondary">
+                        View Archive
                     </a>
-
-
-                    <a
-                        href="archive/experiments-01.html"
-                        class="archive-item"
-                    >
-
-                        <span class="archive-number">
-                            003
-                        </span>
-
-                        <span class="archive-title">
-                            Experiments / Volume 01
-                        </span>
-
-                        <span class="archive-date">
-                            2025
-                        </span>
-
-                    </a>
-
-
-                    <a
-                        href="archive/objects.html"
-                        class="archive-item"
-                    >
-
-                        <span class="archive-number">
-                            004
-                        </span>
-
-                        <span class="archive-title">
-                            Objects &amp; Studies
-                        </span>
-
-                        <span class="archive-date">
-                            2024
-                        </span>
-
-                    </a>
-
-
-                    <a
-                        href="archive/early-work.html"
-                        class="archive-item"
-                    >
-
-                        <span class="archive-number">
-                            005
-                        </span>
-
-                        <span class="archive-title">
-                            Early Work
-                        </span>
-
-                        <span class="archive-date">
-                            2023
-                        </span>
-
-                    </a>
-
 
                 </div>
 
             </div>
 
-        </section>
 
+            <div class="landing-footer">
 
+                <span>
+                    EST. 2026
+                </span>
 
-        <!-- =================================================
-             ABOUT
-             ================================================= -->
+                <span>
+                    SURABAYA / INDONESIA
+                </span>
 
-        <section id="about" class="section">
-
-            <div class="container-small">
-
-                <div class="hero-label">
-                    03 / About
-                </div>
-
-
-                <h2>
-                    Made with intention.
-                </h2>
-
-
-                <div class="two-column mt-5">
-
-                    <div>
-
-                        <p>
-                            I'm a maker / designer / artist
-                            creating objects and products that
-                            explore materials, ideas and everyday
-                            life.
-                        </p>
-
-                    </div>
-
-
-                    <div>
-
-                        <p class="text-muted">
-                            This website acts as both a storefront
-                            and an archive. Some pieces are
-                            available to purchase, while others
-                            exist simply as documentation of
-                            previous work.
-                        </p>
-
-                    </div>
-
-                </div>
+                <span>
+                    <a href="about.html">ABOUT</a>
+                </span>
 
             </div>
 
         </section>
-
-
-
-        <!-- =================================================
-             CONTACT
-             ================================================= -->
-
-        <section id="contact" class="section-small">
-
-            <div class="container">
-
-                <div class="two-column">
-
-
-                    <div>
-
-                        <div class="hero-label">
-                            04 / Contact
-                        </div>
-
-                        <h2>
-                            Get in touch.
-                        </h2>
-
-                    </div>
-
-
-                    <div>
-
-                        <p class="text-muted">
-                            Interested in a product, collaboration,
-                            commission or just want to say hello?
-                        </p>
-
-
-                        <div class="mt-5">
-
-                            <a
-                                href="mailto:hello@example.com"
-                                class="btn btn-primary"
-                            >
-                                hello@example.com
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
 
     </main>
 
 
-
-    <!-- =====================================================
+    <!-- =========================
          FOOTER
-         ===================================================== -->
+    ========================== -->
 
     <footer class="site-footer">
 
         <div class="container">
 
-
-            <div class="footer-grid">
-
-
-                <!-- Brand -->
-
-                <div>
-
-                    <div class="footer-title">
-                        YOUR NAME
-                    </div>
-
-                    <p class="text-muted">
-                        An independent catalogue of products,
-                        objects and creative work.
-                    </p>
-
-                </div>
-
-
-                <!-- Navigation -->
-
-                <div>
-
-                    <div class="footer-heading">
-                        Navigate
-                    </div>
-
-                    <ul class="footer-links">
-
-                        <li>
-                            <a href="#collection">
-                                Collection
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#archive">
-                                Archive
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#about">
-                                About
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#contact">
-                                Contact
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- Social -->
-
-                <div>
-
-                    <div class="footer-heading">
-                        Elsewhere
-                    </div>
-
-                    <ul class="footer-links">
-
-                        <li>
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Instagram
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Behance
-                            </a>
-                        </li>
-
-                        <li>
-                            <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Pinterest
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-            </div>
-
-
-            <!-- Footer bottom -->
-
             <div class="footer-bottom">
 
-                <span>
-                    © 2026 Your Name
-                </span>
+                <p>
+                    © 2026 Syahsellingstuff
+                </p>
 
-                <span>
-                    Built with HTML &amp; CSS
-                </span>
+                <p>
+                    All things considered.
+                </p>
 
             </div>
-
 
         </div>
 
     </footer>
 
-
-
 </body>
-
 </html>
 ```
