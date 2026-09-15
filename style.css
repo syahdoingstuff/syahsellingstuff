@@ -7,8 +7,8 @@
     the images as variables */
 
             :root {
-                --header-image: url('/root/assets/Header.png');
-                --body-bg-image: url('/root/assets/background.gif');
+                --header-image: url('/assets/Header.png');
+                --body-bg-image: url('/assets/background.gif');
 
                 /* colors */
                 --content: #43256E;
