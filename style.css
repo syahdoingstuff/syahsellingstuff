@@ -1,1 +1,1499 @@
+/* =========================================================
+   STOREFRONT / PRODUCT CATALOGUE
+   style.css
+   =========================================================
 
+   TABLE OF CONTENTS
+   01. Variables / Theme
+   02. Reset
+   03. Base Styles
+   04. Typography
+   05. Layout
+   06. Header / Navigation
+   07. Hero
+   08. Buttons
+   09. Product Grid
+   10. Product Cards
+   11. Product Details
+   12. Categories / Tags
+   13. Archive
+   14. Forms
+   15. Footer
+   16. Utility Classes
+   17. Animations
+   18. Responsive Design
+   ========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES / THEME
+   ---------------------------------------------------------
+   Change these values to quickly change the entire website.
+   ========================================================= */
+
+:root {
+
+    /* ---------- Colors ---------- */
+
+    --color-background: #f5f3ee;
+    --color-surface: #ffffff;
+    --color-surface-alt: #ebe8e0;
+
+    --color-text: #171717;
+    --color-text-muted: #6f6f6f;
+    --color-text-light: #999999;
+
+    --color-primary: #171717;
+    --color-primary-hover: #3a3a3a;
+
+    --color-border: #d8d5cd;
+    --color-border-dark: #a9a69e;
+
+    --color-accent: #d95c3f;
+    --color-accent-hover: #b9472f;
+
+    --color-success: #477653;
+    --color-warning: #b47a27;
+    --color-danger: #b94444;
+
+
+    /* ---------- Typography ---------- */
+
+    --font-body:Montserrat,sans-serif;
+
+    --font-heading:Georgia,serif;
+
+    /* ---------- Font Sizes ---------- */
+
+    --text-xs: 0.7rem;
+    --text-sm: 0.8rem;
+    --text-base: 1rem;
+    --text-md: 1.15rem;
+    --text-lg: 1.5rem;
+    --text-xl: 2rem;
+    --text-2xl: 3rem;
+    --text-3xl: 4.5rem;
+
+
+    /* ---------- Spacing ---------- */
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+    --space-10: 8rem;
+
+
+    /* ---------- Layout ---------- */
+
+    --max-width: 1400px;
+    --content-width: 1100px;
+
+    --page-padding: 2rem;
+
+    --grid-gap: 1.5rem;
+
+
+    /* ---------- Borders / Corners ---------- */
+
+    --border-width: 1px;
+
+    --radius-small: 2px;
+    --radius-medium: 6px;
+    --radius-large: 12px;
+    --radius-round: 999px;
+
+
+    /* ---------- Shadows ---------- */
+
+    --shadow-small:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+
+    --shadow-medium:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+
+    --shadow-large:
+        0 20px 50px rgba(0, 0, 0, 0.12);
+
+
+    /* ---------- Transitions ---------- */
+
+    --transition-fast: 150ms ease;
+
+    --transition:
+        250ms ease;
+
+    --transition-slow:
+        400ms ease;
+}
+
+
+/* =========================================================
+   02. RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+    margin: 0;
+}
+
+ul,
+ol {
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   03. BASE STYLES
+   ========================================================= */
+
+body {
+    min-height: 100vh;
+
+    background: var(--color-background);
+
+    color: var(--color-text);
+
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+::selection {
+    background: var(--color-text);
+    color: var(--color-background);
+}
+
+
+/* =========================================================
+   04. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--color-text);
+
+    font-family: var(--font-heading);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: var(--text-3xl);
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    font-size: var(--text-2xl);
+    letter-spacing: -0.03em;
+}
+
+h3 {
+    font-size: var(--text-xl);
+}
+
+h4 {
+    font-size: var(--text-lg);
+}
+
+p {
+    max-width: 65ch;
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.text-small {
+    font-size: var(--text-sm);
+}
+
+.text-mono {
+    font-family: var(--font-mono);
+}
+
+
+/* =========================================================
+   05. LAYOUT
+   ========================================================= */
+
+.container {
+    width: min(
+        calc(100% - (var(--page-padding) * 2)),
+        var(--max-width)
+    );
+
+    margin-inline: auto;
+}
+
+.container-small {
+    width: min(
+        calc(100% - (var(--page-padding) * 2)),
+        var(--content-width)
+    );
+
+    margin-inline: auto;
+}
+
+.section {
+    padding-block: var(--space-9);
+}
+
+.section-small {
+    padding-block: var(--space-7);
+}
+
+
+/* Two-column layouts */
+
+.two-column {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: var(--space-7);
+}
+
+
+/* =========================================================
+   06. HEADER / NAVIGATION
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(245, 243, 238, 0.92);
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    backdrop-filter: blur(12px);
+}
+
+.nav {
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--space-5);
+}
+
+.logo {
+    font-family: var(--font-heading);
+
+    font-size: var(--text-lg);
+
+    letter-spacing: -0.03em;
+}
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-5);
+}
+
+.nav-links a {
+    position: relative;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--text-sm);
+
+    transition:
+        color var(--transition-fast);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-text);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 100%;
+    height: 1px;
+
+    background: var(--color-text);
+
+    transform: scaleX(0);
+
+    transform-origin: right;
+
+    transition:
+        transform var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    transform: scaleX(1);
+
+    transform-origin: left;
+}
+
+
+/* =========================================================
+   07. HERO
+   ========================================================= */
+
+.hero {
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-block: var(--space-10);
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-label {
+    margin-bottom: var(--space-4);
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-mono);
+
+    font-size: var(--text-xs);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+.hero h1 {
+    margin-bottom: var(--space-5);
+}
+
+.hero p {
+    max-width: 600px;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--text-md);
+}
+
+
+/* Hero image */
+
+.hero-image {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    margin-top: var(--space-7);
+
+    background: var(--color-surface-alt);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   08. BUTTONS
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: var(--space-2);
+
+    min-height: 44px;
+
+    padding:
+        0.7rem
+        1.2rem;
+
+    border:
+        var(--border-width)
+        solid
+        transparent;
+
+    border-radius: var(--radius-small);
+
+    font-size: var(--text-sm);
+
+    transition:
+        background var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--color-primary);
+
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-hover);
+}
+
+.btn-secondary {
+    background: transparent;
+
+    border-color: var(--color-border-dark);
+
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    background: var(--color-surface);
+}
+
+.btn-accent {
+    background: var(--color-accent);
+
+    color: white;
+}
+
+.btn-accent:hover {
+    background: var(--color-accent-hover);
+}
+
+.btn-small {
+    min-height: 36px;
+
+    padding:
+        0.45rem
+        0.8rem;
+
+    font-size: var(--text-xs);
+}
+
+
+/* =========================================================
+   09. PRODUCT GRID
+   ========================================================= */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: var(--grid-gap);
+}
+
+.product-grid-3 {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: var(--grid-gap);
+}
+
+
+/* =========================================================
+   10. PRODUCT CARDS
+   ========================================================= */
+
+.product-card {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.product-image {
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 1 / 1;
+
+    margin-bottom: var(--space-4);
+
+    background: var(--color-surface-alt);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform var(--transition-slow);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.035);
+}
+
+
+/* Product image badge */
+
+.product-badge {
+    position: absolute;
+
+    top: var(--space-3);
+    left: var(--space-3);
+
+    z-index: 2;
+
+    padding:
+        0.35rem
+        0.6rem;
+
+    background: var(--color-text);
+
+    color: white;
+
+    font-family: var(--font-mono);
+
+    font-size: var(--text-xs);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+}
+
+
+/* Product information */
+
+.product-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-2);
+}
+
+.product-category {
+    color: var(--color-text-muted);
+
+    font-family: var(--font-mono);
+
+    font-size: var(--text-xs);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+.product-name {
+    font-family: var(--font-body);
+
+    font-size: var(--text-base);
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+.product-description {
+    color: var(--color-text-muted);
+
+    font-size: var(--text-sm);
+
+    line-height: 1.5;
+}
+
+.product-price {
+    margin-top: var(--space-1);
+
+    font-family: var(--font-mono);
+
+    font-size: var(--text-sm);
+}
+
+
+/* Card footer */
+
+.product-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--space-3);
+
+    margin-top: var(--space-3);
+}
+
+
+/* =========================================================
+   11. PRODUCT DETAILS
+   ========================================================= */
+
+.product-detail {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(300px, 0.8fr);
+
+    gap: var(--space-8);
+
+    padding-block: var(--space-8);
+}
+
+.product-detail-image {
+    overflow: hidden;
+
+    background: var(--color-surface-alt);
+}
+
+.product-detail-image img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+.product-detail-info {
+    align-self: center;
+}
+
+.product-detail-category {
+    margin-bottom: var(--space-3);
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-mono);
+
+    font-size: var(--text-xs);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+}
+
+.product-detail-info h1 {
+    margin-bottom: var(--space-4);
+}
+
+.product-detail-price {
+    margin-bottom: var(--space-5);
+
+    font-family: var(--font-mono);
+
+    font-size: var(--text-md);
+}
+
+.product-detail-description {
+    margin-bottom: var(--space-6);
+
+    color: var(--color-text-muted);
+}
+
+.product-meta {
+    margin-top: var(--space-7);
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--color-border);
+}
+
+.product-meta-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: var(--space-5);
+
+    padding-block: var(--space-3);
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    font-size: var(--text-sm);
+}
+
+.product-meta-label {
+    color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   12. CATEGORIES / TAGS
+   ========================================================= */
+
+.category-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: var(--space-2);
+}
+
+.category {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        0.4rem
+        0.75rem;
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: var(--radius-round);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--text-sm);
+
+    transition:
+        background var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.category:hover,
+.category.active {
+    background: var(--color-text);
+
+    border-color: var(--color-text);
+
+    color: white;
+}
+
+
+/* =========================================================
+   13. ARCHIVE
+   ========================================================= */
+
+.archive-list {
+    border-top:
+        var(--border-width)
+        solid
+        var(--color-border);
+}
+
+.archive-item {
+    display: grid;
+
+    grid-template-columns:
+        100px
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: var(--space-5);
+
+    padding-block: var(--space-4);
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    transition:
+        background var(--transition-fast);
+}
+
+.archive-item:hover {
+    background: var(--color-surface);
+}
+
+.archive-number {
+    color: var(--color-text-muted);
+
+    font-family: var(--font-mono);
+
+    font-size: var(--text-xs);
+}
+
+.archive-title {
+    font-size: var(--text-base);
+}
+
+.archive-date {
+    color: var(--color-text-muted);
+
+    font-family: var(--font-mono);
+
+    font-size: var(--text-xs);
+}
+
+
+/* =========================================================
+   14. FORMS
+   ========================================================= */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-2);
+
+    margin-bottom: var(--space-4);
+}
+
+.form-label {
+    font-size: var(--text-sm);
+
+    font-weight: 600;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding:
+        0.8rem
+        0.9rem;
+
+    background: var(--color-surface);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: var(--radius-small);
+
+    color: var(--color-text);
+
+    outline: none;
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-text);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+/* Search */
+
+.search {
+    position: relative;
+}
+
+.search input {
+    padding-left: 2.75rem;
+}
+
+.search-icon {
+    position: absolute;
+
+    top: 50%;
+    left: 1rem;
+
+    transform: translateY(-50%);
+
+    color: var(--color-text-muted);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   15. FOOTER
+   ========================================================= */
+
+.site-footer {
+    margin-top: var(--space-10);
+
+    padding-block: var(--space-7);
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--color-border);
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr;
+
+    gap: var(--space-7);
+}
+
+.footer-title {
+    margin-bottom: var(--space-3);
+
+    font-family: var(--font-heading);
+
+    font-size: var(--text-lg);
+}
+
+.footer-heading {
+    margin-bottom: var(--space-3);
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-mono);
+
+    font-size: var(--text-xs);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-2);
+}
+
+.footer-links a {
+    color: var(--color-text-muted);
+
+    font-size: var(--text-sm);
+
+    transition:
+        color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-text);
+}
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: var(--space-5);
+
+    margin-top: var(--space-7);
+
+    padding-top: var(--space-4);
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--text-xs);
+}
+
+
+/* =========================================================
+   16. UTILITY CLASSES
+   ========================================================= */
+
+.flex {
+    display: flex;
+}
+
+.flex-between {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.flex-center {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.gap-1 {
+    gap: var(--space-1);
+}
+
+.gap-2 {
+    gap: var(--space-2);
+}
+
+.gap-3 {
+    gap: var(--space-3);
+}
+
+.gap-4 {
+    gap: var(--space-4);
+}
+
+.gap-5 {
+    gap: var(--space-5);
+}
+
+.mt-1 {
+    margin-top: var(--space-1);
+}
+
+.mt-2 {
+    margin-top: var(--space-2);
+}
+
+.mt-3 {
+    margin-top: var(--space-3);
+}
+
+.mt-4 {
+    margin-top: var(--space-4);
+}
+
+.mt-5 {
+    margin-top: var(--space-5);
+}
+
+.mb-1 {
+    margin-bottom: var(--space-1);
+}
+
+.mb-2 {
+    margin-bottom: var(--space-2);
+}
+
+.mb-3 {
+    margin-bottom: var(--space-3);
+}
+
+.mb-4 {
+    margin-bottom: var(--space-4);
+}
+
+.mb-5 {
+    margin-bottom: var(--space-5);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   17. ANIMATIONS
+   ========================================================= */
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation:
+        fade-in
+        600ms
+        ease
+        both;
+}
+
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* =========================================================
+   18. RESPONSIVE DESIGN
+   ========================================================= */
+
+
+/* ---------- Tablets ---------- */
+
+@media (max-width: 1000px) {
+
+    :root {
+        --page-padding: 1.5rem;
+
+        --text-3xl: 3.5rem;
+
+        --text-2xl: 2.5rem;
+    }
+
+
+    .product-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+
+    .product-grid-3 {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .product-detail {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: var(--space-6);
+    }
+
+
+    .footer-grid {
+        grid-template-columns:
+            1.5fr 1fr 1fr;
+    }
+}
+
+
+/* ---------- Small tablets / large phones ---------- */
+
+@media (max-width: 750px) {
+
+    :root {
+        --page-padding: 1rem;
+
+        --space-9: 4rem;
+
+        --space-10: 5rem;
+
+        --text-3xl: 3rem;
+
+        --text-2xl: 2.25rem;
+
+        --text-xl: 1.75rem;
+    }
+
+
+    .nav {
+        min-height: 64px;
+    }
+
+
+    .nav-links {
+        gap: var(--space-3);
+    }
+
+
+    .nav-links a {
+        font-size: var(--text-xs);
+    }
+
+
+    .hero {
+        min-height: auto;
+
+        padding-block: var(--space-9);
+    }
+
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .product-grid-3 {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .product-detail {
+        grid-template-columns: 1fr;
+
+        gap: var(--space-6);
+
+        padding-block: var(--space-6);
+    }
+
+
+    .product-detail-info {
+        align-self: auto;
+    }
+
+
+    .archive-item {
+        grid-template-columns:
+            50px
+            1fr;
+    }
+
+
+    .archive-date {
+        display: none;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .footer-grid > :first-child {
+        grid-column: 1 / -1;
+    }
+
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: var(--space-2);
+    }
+}
+
+
+/* ---------- Phones ---------- */
+
+@media (max-width: 500px) {
+
+    :root {
+        --text-3xl: 2.5rem;
+
+        --text-2xl: 2rem;
+
+        --text-xl: 1.5rem;
+    }
+
+
+    .nav {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+        padding-block: var(--space-3);
+    }
+
+
+    .nav-links {
+        width: 100%;
+
+        overflow-x: auto;
+
+        padding-bottom: var(--space-1);
+    }
+
+
+    .nav-links a {
+        flex-shrink: 0;
+    }
+
+
+    .product-grid,
+    .product-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-image {
+        aspect-ratio: 4 / 3;
+    }
+
+
+    .product-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .product-footer .btn {
+        width: 100%;
+    }
+
+
+    .category-list {
+        gap: var(--space-2);
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-grid > :first-child {
+        grid-column: auto;
+    }
+}
+```
+
+### How you'd use it
+
+Your `index.html` could then contain a product card like this:
+
+```html
+<div class="product-card">
+
+    <div class="product-image">
+        <span class="product-badge">New</span>
+
+        <img
+            src="images/product-01.jpg"
+            alt="Description of my product"
+        >
+    </div>
+
+    <div class="product-info">
+
+        <span class="product-category">
+            Collection 01
+        </span>
+
+        <h3 class="product-name">
+            My Product
+        </h3>
+
+        <p class="product-description">
+            A short description of the product.
+        </p>
+
+        <div class="product-footer">
+
+            <span class="product-price">
+                $45.00
+            </span>
+
+            <a href="product.html" class="btn btn-secondary btn-small">
+                View
+            </a>
+
+        </div>
+
+    </div>
