@@ -1,31 +1,4 @@
 /* =========================================================
-   STOREFRONT / PRODUCT CATALOGUE
-   style.css
-   =========================================================
-
-   TABLE OF CONTENTS
-   01. Variables / Theme
-   02. Reset
-   03. Base Styles
-   04. Typography
-   05. Layout
-   06. Header / Navigation
-   07. Hero
-   08. Buttons
-   09. Product Grid
-   10. Product Cards
-   11. Product Details
-   12. Categories / Tags
-   13. Archive
-   14. Forms
-   15. Footer
-   16. Utility Classes
-   17. Animations
-   18. Responsive Design
-   ========================================================= */
-
-
-/* =========================================================
    01. VARIABLES / THEME
    ---------------------------------------------------------
    Change these values to quickly change the entire website.
@@ -1452,48 +1425,137 @@ select:focus {
         grid-column: auto;
     }
 }
-```
 
-### How you'd use it
+/* =========================================
+   LANDING PAGE
+========================================= */
 
-Your `index.html` could then contain a product card like this:
+.landing-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-```html
-<div class="product-card">
+.landing-page main {
+    flex: 1;
+}
 
-    <div class="product-image">
-        <span class="product-badge">New</span>
+.landing {
+    min-height: calc(100vh - 80px);
+    padding: 5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
 
-        <img
-            src="images/product-01.jpg"
-            alt="Description of my product"
-        >
-    </div>
+.landing-content {
+    max-width: 850px;
+    padding-top: 8vh;
+}
 
-    <div class="product-info">
+.landing-content .hero-label {
+    margin-bottom: 1.5rem;
+}
 
-        <span class="product-category">
-            Collection 01
-        </span>
+.landing h1 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+}
 
-        <h3 class="product-name">
-            My Product
-        </h3>
+.landing-description {
+    max-width: 520px;
+    margin-top: 2.5rem;
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
 
-        <p class="product-description">
-            A short description of the product.
-        </p>
+.landing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
 
-        <div class="product-footer">
+.landing-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 3rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+}
 
-            <span class="product-price">
-                $45.00
-            </span>
+.landing-footer a {
+    color: inherit;
+}
 
-            <a href="product.html" class="btn btn-secondary btn-small">
-                View
-            </a>
+.landing-footer a:hover {
+    color: var(--color-text);
+}
 
-        </div>
 
-    </div>
+/* =========================================
+   LANDING — MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+    .landing {
+        min-height: calc(100vh - 70px);
+        padding: 3rem 1.25rem 1.5rem;
+    }
+
+    .landing-content {
+        padding-top: 5vh;
+    }
+
+    .landing h1 {
+        font-size: clamp(3.25rem, 16vw, 6rem);
+    }
+
+    .landing-description {
+        margin-top: 2rem;
+        font-size: var(--font-size-base);
+    }
+
+    .landing-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .landing-actions .btn {
+        text-align: center;
+    }
+
+    .landing-footer {
+        flex-wrap: wrap;
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .landing-footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .landing-footer span:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
